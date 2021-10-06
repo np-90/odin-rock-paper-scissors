@@ -1,9 +1,17 @@
-const options = ['Rock', 'Paper', 'Scissors'];    // Defining the array of possible options
+const options = ['rock', 'paper', 'scissors'];    // Defining the array of possible options
 let gamesPlayed = 0
 let playerScore = 0
 let computerScore = 0
 
 function game() {
+
+while (gamesPlayed < 5) {
+    console.log(playRound());
+}
+    
+console.log(`Final score - Computer ${computerScore} - Player ${playerScore}`)
+}
+    
 // create a function called computerPlay that will randomly pick either rock paper or scissors for the computer
 function computerPlay() {
     let random = Math.floor(Math.random() * options.length);    // Choosing a random number between 0 and 1, and multiplying by the length of the array, and rounding down
@@ -12,9 +20,8 @@ function computerPlay() {
 
     // create user selection
     function playRound() {
-        let computerSelectionAsk = computerPlay();     // Computer makes their selection
+        let computerSelection = computerPlay();     // Computer makes their selection
         let playerSelectionAsk = prompt("What is your selection? Choose from either Rock, Paper or Scissors");    // Prompt player for their selection
-        let computerSelection = computerSelectionAsk.toLowerCase();     // Converts selection to lower case
         let playerSelection = playerSelectionAsk.toLowerCase();     // Converts selection to lower case
     
         // if computer choice and player choice are the same, return Tie
@@ -42,10 +49,4 @@ function computerPlay() {
         }
     }
 
-while (gamesPlayed < 5) {
-    console.log(playRound());
-}
-
-console.log(`Final score - Computer ${computerScore} - Player ${playerScore}`)
-
-}
+game();
