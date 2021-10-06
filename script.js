@@ -4,12 +4,10 @@ let playerScore = 0
 let computerScore = 0
 
 function game() {
-
-while (gamesPlayed < 5) {
-    console.log(playRound());
-}
-    
-console.log(`Final score - Computer ${computerScore} - Player ${playerScore}`)
+    while (gamesPlayed < 5) {
+        console.log(playRound());
+    }
+    console.log(`Final score - Computer ${computerScore} - Player ${playerScore}`)
 }
     
 // create a function called computerPlay that will randomly pick either rock paper or scissors for the computer
